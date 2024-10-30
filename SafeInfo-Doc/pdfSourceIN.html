@@ -1,0 +1,464 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-http.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-none.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script><style>
+        .article {
+            position: relative;
+            padding-bottom: 24px;
+        }
+        
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+
+        .center-text {
+            text-align: center;
+        }
+        
+
+        .code-block {
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+            border-radius: 8px;
+            font-variant-ligatures: none;
+            background-color: rgba(25, 25, 28, .05);
+            word-break: break-all;
+        }
+        
+
+        .container {
+            max-width: 100%;
+            overflow: hidden;
+            page-break-inside: avoid;
+            display: block;
+        }
+        
+
+        .control {
+            color: #19191c;
+            font-size: 16px;
+            font-weight: 670;
+        }
+        
+
+        .detached {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-bottom: 8px;
+        }
+        
+
+        .header-row {
+            background: #e6e6e6;
+        }
+        
+
+        .image {
+            max-width: 100%;
+            max-height: 90vh;
+            height: auto;
+        }
+        
+
+        .image-container {
+            max-width: 100vw;
+        }
+        
+
+        .image-size {
+            height: auto;
+        }
+        
+
+        .inline-code {
+            border-radius: 4px;
+            display: inline;
+            padding: 2px 1px;
+            font-family: JetBrains Sans,monospace;
+            background: #e6e6e6;
+        }
+        
+
+        .list {
+            list-style-type: disc;
+            padding-left: 0;
+            margin-left: 15px;
+        }
+        
+
+        .list-decimal {
+            list-style-type: decimal;
+        }
+        
+
+        .list-item {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            margin-left: 4px;
+        }
+        
+
+        .main-title {
+            padding-bottom: 24px;
+            margin-top: 0;
+            font-size: 40px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .prism {
+            page-break-inside: avoid;
+        }
+        
+        /* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apex+apl+applescript+aql+arduino+arff+armasm+arturo+asciidoc+aspnet+asm6502+asmatmel+autohotkey+autoit+avisynth+avro-idl+awk+bash+basic+batch+bbcode+bbj+bicep+birb+bison+bnf+bqn+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cfscript+chaiscript+cil+cilkc+cilkcpp+clojure+cmake+cobol+coffeescript+concurnas+csp+cooklang+coq+crystal+css-extras+csv+cue+cypher+d+dart+dataweave+dax+dhall+diff+django+dns-zone-file+docker+dot+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+false+firestore-security-rules+flow+fortran+ftl+gml+gap+gcode+gdscript+gedcom+gettext+gherkin+git+glsl+gn+linker-script+go+go-module+gradle+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+hoon+http+hpkp+hsts+ichigojam+icon+icu-message-format+idris+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jexl+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keepalived+keyman+kotlin+kumir+kusto+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+log+lolcode+lua+magma+makefile+markdown+markup-templating+mata+matlab+maxscript+mel+mermaid+metafont+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nevod+nginx+nim+nix+nsis+objectivec+ocaml+odin+opencl+openqasm+oz+parigp+parser+pascal+pascaligo+psl+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plant-uml+plsql+powerquery+powershell+processing+prolog+promql+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+qsharp+q+qml+qore+r+racket+cshtml+jsx+tsx+reason+regex+rego+renpy+rescript+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+squirrel+stan+stata+iecst+stylus+supercollider+swift+systemd+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+tremor+turtle+twig+typescript+typoscript+unrealscript+uorazor+uri+v+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+web-idl+wgsl+wiki+wolfram+wren+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=highlight-keywords */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre-wrap;word-spacing:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:16px;margin:0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+        
+
+        :root {
+            width: 95%;
+            max-width: 95vw;
+            padding: 0 0 0 30px;
+        }
+        
+        body {
+            font-family: JetBrains Sans,serif;
+        }
+        
+        a {
+            overflow-wrap: anywhere;
+            width: 100vw;
+        }
+        
+        
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff) format("woff");
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff) format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff) format("woff");
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        
+        code {
+            display: inline;
+            word-break: break-word;
+            font-size: 15px;
+            line-height: inherit;
+            font-variant-ligatures: none;
+            font-family: JetBrains Sans,monospace;
+            white-space: pre-line;
+            overflow-wrap: break-word;
+        }
+        
+        figcaption {
+            margin-top: 5px;
+        }
+        
+        h2 {
+            padding-top: 16px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h3 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h4 {
+            padding-top: 4px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        p {
+            padding: 0;
+            border: 0;
+            line-height: 25px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-bottom: 8px;
+        }
+        
+        div {
+            display: block;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            border: 1px solid #c4c4c4;
+            padding: 10px;
+            text-align: left;
+            word-break: break-all;
+        }
+        
+        .entry {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-template-areas: "chapter page";
+            align-items: end;
+            gap: 0 .25rem;
+            line-height: 25px;
+        }
+        
+        .toc-link-container{
+            grid-area: chapter;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toc-link{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .toc-link-container::after {
+            position: absolute;
+            padding-left: .25ch;
+            content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+            text-align: right;
+        }
+        
+        .page {
+            grid-area: page;
+            width: 30px;
+            text-align: right;
+        }
+        
+
+        .table-wrapper {
+            overflow: hidden;
+            box-sizing: border-box;
+            font: inherit;
+        }
+        
+
+        .topic {
+            page-break-before: always;
+        }
+        </style><title>pdfSourceIN</title></head><body><div><section class="topic"><div><article class="article"><h1 class="main-title">Table of contents</h1><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#2135643">SafeInfo documentation</a></div><div class="page">2</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-82613531">API documentation</a></div><div class="page">9</div></div></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="2135643">SafeInfo documentation</h1><div class="container"><figure class="image-container"><img class="center image image-size" id="2135643#-1trdme_3" alt="Safeinfo" title="Safeinfo" src="/Users/Bogdan/WritersideProjects/SafeInfo-Doc/Writerside/images/safeinfo.png" width="500" height="500"><figcaption class="center-text">Safeinfo</figcaption></figure></div><section><h2 id="2135643#what-is-safeinfo" data-toc="what-is-safeinfo#Docs.md-what-is-safeinfo">What is SafeInfo?</h2><p id="2135643#-1trdme_11">SafeInfo is a messaging app project developed to explore and address the challenges of building a secure communication platform. While it includes the essential features of any messaging app, its primary focus is on robust security, ensuring that messages remain private and protected from any prying eyes.</p></section><section><h2 id="2135643#features-of-safeinfo" data-toc="features-of-safeinfo#Docs.md-features-of-safeinfo">Features of SafeInfo</h2><ul class="list" id="2135643#-1trdme_12" start="1"><li class="list-item" id="2135643#-1trdme_13"><p>Text, image, and emoji messaging</p></li><li class="list-item" id="2135643#-1trdme_14"><p>Server communication via custom APIs</p></li><li class="list-item" id="2135643#-1trdme_15"><p>End-to-end (E2E) encryption</p></li><li class="list-item" id="2135643#-1trdme_16"><p>Encrypted chat history storage</p></li><li class="list-item" id="2135643#-1trdme_17"><p>Two-factor authentication (2FA) via SMS verification</p></li></ul></section><section><h2 id="2135643#overview-of-client-side-architecture" data-toc="overview-of-client-side-architecture#Docs.md-overview-of-client-side-architecture">Overview of Client-Side Architecture</h2><p id="2135643#-1trdme_18">Only one panel can be open at a time. When switching panels, the previous panel is removed from memory, and the new panel is initialized (lazy loading). Here&rsquo;s a quick overview of how panels are managed within the client-side application:</p><div class="container"><figure class="image-container"><img class="center image image-size" id="2135643#-1trdme_19" alt="Client panels" title="Client panels" src="/Users/Bogdan/WritersideProjects/SafeInfo-Doc/Writerside/images/client-panels.png" width="635" height="422"><figcaption class="center-text">Client panels</figcaption></figure></div><p id="2135643#-1trdme_20">The format for saving messages in the chat history file is:</p><div class="detached code-block" id="2135643#-1trdme_21"><pre><code class="language-json">{
+    &quot;&lt;chat-id1&gt;&quot;: { 
+        &quot;&lt;user&gt;&quot;: [ 
+            {&quot;m&quot;: &quot;&lt;m1&gt;&quot;, &quot;t&quot;: &quot;&lt;t1&gt;&quot;}, 
+            {&quot;m&quot;: &quot;&lt;m2&gt;&quot;, &quot;t&quot;: &quot;&lt;t2&gt;&quot;}, 
+            ... 
+            ], 
+        &quot;&lt;otherUser&gt;&quot;: [ 
+            {&quot;m&quot;: &quot;&lt;m1&gt;&quot;, &quot;t&quot;: &quot;&lt;t1&gt;&quot;}, 
+            {&quot;m&quot;: &quot;&lt;m2&gt;&quot;, &quot;t&quot;: &quot;&lt;t2&gt;&quot;}, 
+            ... 
+            ] 
+    },
+    &quot;&lt;chat-id2&gt;&quot;: {
+        ...
+    },
+    ...
+}</code></pre></div><p id="2135643#-1trdme_22">In this structure, &quot;m&quot; represents the encrypted message, and &quot;t&quot; is the timestamp associated with each message.</p><p id="2135643#-1trdme_23">The keys is used in the cryptographic operations are stored in secrets.txt. More about how these values are generated in the How Are Cryptographic Features Implemented? section.</p><div class="detached code-block" id="2135643#-1trdme_24"><pre><code class="language-none">*---------------------*
+|ENCRYPTED PRIVATE KEY|
+*---------------------*
+|BASE64 ENCODED IV    |
+*---------------------*
+|ENCRYPTED MASTER KEY |
+*---------------------*</code></pre></div></section><section><h2 id="2135643#overview-of-server-side-architecture" data-toc="overview-of-server-side-architecture#Docs.md-overview-of-server-side-architecture">Overview of Server-Side Architecture</h2><p id="2135643#-1trdme_25">The server operates on an Apache2 Tomcat server within a Docker container, where it manages database communications for user credentials and the logic for communication channels between users.</p><p id="2135643#-1trdme_26">Each communication channel has a unique chat ID. Messages from clients are stored in separate files based on their chat ID, with each file containing messages in JSON format (mirroring the chat history stored on the client-side):</p><div class="detached code-block" id="2135643#-1trdme_27"><pre><code class="language-json">{ 
+    &quot;&lt;first-user&gt;&quot;: [ 
+        {&quot;m&quot;: &quot;&lt;m1&gt;&quot;, &quot;t&quot;: &quot;&lt;t1&gt;&quot;}, 
+        {&quot;m&quot;: &quot;&lt;m2&gt;&quot;, &quot;t&quot;: &quot;&lt;t2&gt;&quot;}, 
+        ... 
+        ], 
+    &quot;&lt;second-user&gt;&quot;: [ 
+        {&quot;m&quot;: &quot;&lt;m1&gt;&quot;, &quot;t&quot;: &quot;&lt;t1&gt;&quot;}, 
+        {&quot;m&quot;: &quot;&lt;m2&gt;&quot;, &quot;t&quot;: &quot;&lt;t2&gt;&quot;}, 
+        ... 
+        ] 
+}</code></pre></div><section><h3 id="2135643#database-structure" data-toc="database-structure#Docs.md-database-structure">Database Structure</h3><ol class="list list-decimal" id="2135643#-1trdme_29" type="1" start="1"><li class="list-item" id="2135643#-1trdme_34"><p><span class="control" id="2135643#-1trdme_35">User Authentication Table (<span class="inline-code" id="2135643#-1trdme_36">Users</span>)</span>:</p></li></ol><p id="2135643#-1trdme_30">The Users table stores authentication-related data with the following structure:</p><div class="detached code-block" id="2135643#-1trdme_31"><pre><code class="language-sql">CREATE TABLE Users (
+id INT PRIMARY KEY,
+username VARCHAR(20),
+passwordHash VARCHAR(65),
+phoneNumber VARCHAR(14),
+publicKey TEXT NOT NULL
+);</code></pre></div><ul class="list" id="2135643#-1trdme_32" start="1"><li class="list-item" id="2135643#-1trdme_37"><p><span class="inline-code" id="2135643#-1trdme_40">id</span>: Unique identifier for each user, reserved for future use.</p></li><li class="list-item" id="2135643#-1trdme_38"><p><span class="inline-code" id="2135643#-1trdme_41">passwordHash</span>: Stores the SHA-256 hash of the user&rsquo;s password.</p></li><li class="list-item" id="2135643#-1trdme_39"><p><span class="inline-code" id="2135643#-1trdme_42">publicKey</span>: Initially set to 0 and updated to the actual public key when an RSA key pair is generated upon authentication.</p></li></ul><section><h4 id="2135643#2-chat-logic-table-chat" data-toc="2-chat-logic-table-chat#Docs.md-2-chat-logic-table-chat">2. Chat Logic Table (Chat):</h4><p id="2135643#-1trdme_44">The Chat table manages information for each conversation:</p><div class="detached code-block" id="2135643#-1trdme_45"><pre><code class="language-sql">CREATE TABLE Chat {
+chat_id VARCHAR(64) PRIMARY KEY,
+user1 VARCHAR(20),
+ua1 BOOLEAN,
+lastReqTs1 VARCHAR(30),
+user2 VARCHAR(20),
+ua2 BOOLEAN,
+lastReqTs2 VARCHAR(30)
+}</code></pre></div><ul class="list" id="2135643#-1trdme_46" start="1"><li class="list-item" id="2135643#-1trdme_50"><p><span class="inline-code" id="2135643#-1trdme_54">chat_id</span>: Unique UUID for each communication channel.</p></li><li class="list-item" id="2135643#-1trdme_51"><p><span class="inline-code" id="2135643#-1trdme_55">user1</span> and <span class="inline-code" id="2135643#-1trdme_56">user2</span>: Represent the two users in the chat.</p></li><li class="list-item" id="2135643#-1trdme_52"><p><span class="inline-code" id="2135643#-1trdme_57">ua1</span> and <span class="inline-code" id="2135643#-1trdme_58">ua2</span>: &quot;User aware&quot; flags for user1 and user2, initially set to 0. Once a user accesses the chat, the server sets their flag to 1, indicating the chat is no longer &quot;new&quot; for that user.</p></li><li class="list-item" id="2135643#-1trdme_53"><p><span class="inline-code" id="2135643#-1trdme_59">lastReqTs1</span> and <span class="inline-code" id="2135643#-1trdme_60">lastReqTs2</span>: Track the last time each user polled for messages, helping avoid duplicate messages in future requests.</p></li></ul><p id="2135643#-1trdme_47">For example, if user1 initiates a chat with user2, the server assigns a chat_id but initially sets ua2 to 0 since user2 hasn&rsquo;t yet seen the chat. When user2 logs in and the server detects the new chat, it sets ua2 to 1, indicating the user is aware of this chat. This ensures that chat_id isn&rsquo;t repeatedly flagged as &quot;new&quot; for future requests.</p></section></section></section><section><h2 id="2135643#how-are-messages-handled" data-toc="how-are-messages-handled#Docs.md-how-are-messages-handled">How Are Messages Handled?</h2><p id="2135643#-1trdme_61">When a client decides to communicate with another registered user, the messages are encrypted before being sent to the server. They are also stored locally on the client&rsquo;s file system, allowing the user to view sent and received messages offline.</p><p id="2135643#-1trdme_62">Each time a user opens a chat with another user, a background worker thread initiates polling to the server every 3 seconds. Upon receiving a request, the server compares the timestamp of the last polling request with the timestamps of any messages linked to the current chat ID. Messages with timestamps more recent than the previous request are added to an array of new messages, which is then sent back to the user in the response body.</p><div class="detached code-block" id="2135643#-1trdme_63"><pre><code class="language-json">{&quot;messages&quot;:[{&quot;m&quot;: &quot;&lt;m1&gt;&quot;, &quot;t&quot;: &quot;&lt;t1&gt;&quot;}, {&quot;m&quot;: &quot;&lt;m2&gt;&quot;, &quot;t&quot;: &quot;&lt;t2&gt;&quot;},...]}</code></pre></div><p id="2135643#-1trdme_64">Once all new messages are identified, the server generates a new timestamp for the current request and updates it in the database, establishing it as the reference time for the next polling request.</p><p id="2135643#-1trdme_65">To poll messages from the server, send a <span class="inline-code" id="2135643#-1trdme_67">GET</span> request with the user&rsquo;s token and the chat ID included in the URL.</p><p id="2135643#-1trdme_66">To send messages to the server, send a <span class="inline-code" id="2135643#-1trdme_68">POST</span> request with the user&rsquo;s token and a message object: <span class="inline-code" id="2135643#-1trdme_69">{&quot;m&quot;: &quot;&lt;message&gt;&quot;,&quot;t&quot;: &quot;&lt;timestamp&gt;&quot;}</span></p></section><section><h2 id="2135643#how-are-authentication-and-authorization-managed" data-toc="how-are-authentication-and-authorization-managed#Docs.md-how-are-authentication-and-authorization-managed">How Are Authentication and Authorization Managed?</h2><section><h3 id="2135643#authentication" data-toc="authentication#Docs.md-authentication">Authentication</h3><p id="2135643#-1trdme_72">After successfully registering an account, a user must log in with a username and password. The SHA-256 hash of the provided password is generated and compared to the stored hash on the server. If the username exists and the password is correct, the user is logged into their account.</p><p id="2135643#-1trdme_73">If a user forgets their password, they can authenticate via an alternative method. After entering their username, they are redirected to a 2FA panel where they must provide a one-time passcode (OTP) sent to the phone number registered with the account. If the OTP is correct, the user is logged in, but they must change their password in settings to re-enable password-based access to the account.</p></section><section><h3 id="2135643#authorization" data-toc="authorization#Docs.md-authorization">Authorization</h3><p id="2135643#-1trdme_74">Once logged in, the user requests a JWT token, valid for 30 minutes, to verify their identity for any user-related chat or API requests. The JWT is signed with an HMAC SHA-256 algorithm, using a server-only key to ensure session integrity. The session token is stored locally on the client side for reuse and is deleted when the user logs out.</p></section></section><section><h2 id="2135643#how-are-cryptographic-features-implemented" data-toc="how-are-cryptographic-features-implemented#Docs.md-how-are-cryptographic-features-implemented">How Are Cryptographic Features Implemented?</h2><p id="2135643#-1trdme_75">Most cryptographic security features are handled client-side within the CryptoProvider class, which applies different algorithms based on the type of encryption needed.</p><section><h3 id="2135643#chat-history-encryption" data-toc="chat-history-encryption#Docs.md-chat-history-encryption">Chat History Encryption</h3><p id="2135643#-1trdme_79">To protect messages from potential malicious third parties, message content is encrypted using AES in CBC mode. This process uses a random 16-byte IV and a 256-bit random master key for encryption security.</p></section><section><h3 id="2135643#end-to-end-e2e-encryption" data-toc="end-to-end-e2e-encryption#Docs.md-end-to-end-e2e-encryption">End-to-End (E2E) Encryption</h3><p id="2135643#-1trdme_80">Before messages are sent to the server, they are encrypted by the client using the public key of the intended recipient (identified by the associated chat ID) with RSA encryption. This ensures that only the intended recipient can read the message, as the server cannot decrypt it. When a user receives messages from the server, they are encrypted and must be decrypted locally with the user&rsquo;s private key.</p></section><section><h3 id="2135643#key-storage" data-toc="key-storage#Docs.md-key-storage">Key Storage</h3><p id="2135643#-1trdme_81">The master key and private key are critical to the app&rsquo;s cryptographic security. To keep them confidential, they are stored locally with added protection. The private key is encrypted using the master key, and the master key is further XORed with a &quot;data key&quot; for security. This data key is derived from the user&rsquo;s password hash combined with a known salt using PBKDF2 with HMAC SHA-256, allowing secure re-encryption of the master key when needed.</p><section><h4 id="2135643#to-learn-more-about-client-server-communication-check-the-api-documentation" data-toc="to-learn-more-about-client-server-communication-check-the-api-documentation#Docs.md-to-learn-more-about-client-server-communication-check-the-api-documentation">To learn more about client-server communication, check the API documentation</h4></section></section></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-82613531">API documentation</h1><ul class="list" id="-82613531#sk94ao_3" start="1"><li class="list-item" id="-82613531#sk94ao_29"><p>Login</p></li><li class="list-item" id="-82613531#sk94ao_30"><p>Registration</p></li><li class="list-item" id="-82613531#sk94ao_31"><p>Forgot Password</p></li><li class="list-item" id="-82613531#sk94ao_32"><p>Verify Phone Number</p></li><li class="list-item" id="-82613531#sk94ao_33"><p>Verify OTP</p></li><li class="list-item" id="-82613531#sk94ao_34"><p>New Chat IDs</p></li><li class="list-item" id="-82613531#sk94ao_35"><p>Get Public Key</p></li><li class="list-item" id="-82613531#sk94ao_36"><p>Send Public Key</p></li><li class="list-item" id="-82613531#sk94ao_37"><p>Get Session</p></li><li class="list-item" id="-82613531#sk94ao_38"><p>Get Chat ID</p></li><li class="list-item" id="-82613531#sk94ao_39"><p>Change Phone</p></li><li class="list-item" id="-82613531#sk94ao_40"><p>Change Password</p></li></ul><section><h2 id="-82613531#login" data-toc="login#API-doc.md-login">Login</h2><section><h3 id="-82613531#endpoint-api-login" data-toc="endpoint-api-login#API-doc.md-endpoint-api-login">Endpoint: /api/login</h3><ul class="list" id="-82613531#sk94ao_56" start="1"><li class="list-item" id="-82613531#sk94ao_59"><p><span class="control" id="-82613531#sk94ao_61">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_60"><p><span class="control" id="-82613531#sk94ao_62">Description</span>: Authenticates a user with their username and password.</p></li></ul></section><section><h3 id="-82613531#parameters" data-toc="parameters#API-doc.md-parameters">Parameters</h3><div class="table-wrapper detached"><table id="-82613531#sk94ao_64"><tr class="header-row" id="-82613531#sk94ao_66"><th id="-82613531#sk94ao_69"><p>Field</p></th><th id="-82613531#sk94ao_70"><p>Type</p></th><th id="-82613531#sk94ao_71"><p>Required</p></th><th id="-82613531#sk94ao_72"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_67"><td id="-82613531#sk94ao_73"><p><span class="inline-code" id="-82613531#sk94ao_77">username</span></p></td><td id="-82613531#sk94ao_74"><p>String</p></td><td id="-82613531#sk94ao_75"><p>Yes</p></td><td id="-82613531#sk94ao_76"><p>The username of the user.</p></td></tr><tr class="" id="-82613531#sk94ao_68"><td id="-82613531#sk94ao_78"><p><span class="inline-code" id="-82613531#sk94ao_82">passwordHash</span></p></td><td id="-82613531#sk94ao_79"><p>String</p></td><td id="-82613531#sk94ao_80"><p>Yes</p></td><td id="-82613531#sk94ao_81"><p>The password hash for the account.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example0" data-toc="example0#API-doc.md-example0">Example Requests and Responses</h2><section><h3 id="-82613531#request0" data-toc="request0#API-doc.md-request0">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_87"><pre><code class="language-http">POST /api/login
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;exampleUser&quot;,
+    &quot;passwordHash&quot;: &quot;examplePasswordHash&quot;
+}</code></pre></div><p id="-82613531#sk94ao_88"><span class="control" id="-82613531#sk94ao_94">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_89"><tr class="header-row" id="-82613531#sk94ao_95"><th id="-82613531#sk94ao_99"><p>Field</p></th><th id="-82613531#sk94ao_100"><p>Type</p></th><th id="-82613531#sk94ao_101"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_96"><td id="-82613531#sk94ao_102"><p><span class="inline-code" id="-82613531#sk94ao_105">status</span></p></td><td id="-82613531#sk94ao_103"><p>String</p></td><td id="-82613531#sk94ao_104"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_97"><td id="-82613531#sk94ao_106"><p><span class="inline-code" id="-82613531#sk94ao_109">message</span></p></td><td id="-82613531#sk94ao_107"><p>String</p></td><td id="-82613531#sk94ao_108"><p>Error details, if the status is &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_98"><td id="-82613531#sk94ao_110"><p><span class="inline-code" id="-82613531#sk94ao_113">phoneNumber</span></p></td><td id="-82613531#sk94ao_111"><p>String</p></td><td id="-82613531#sk94ao_112"><p>Phone number associated with the account.</p></td></tr></table></div><p id="-82613531#sk94ao_90"><span class="control" id="-82613531#sk94ao_114">Response Example</span> <span class="control" id="-82613531#sk94ao_115">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_91"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;phoneNumber&quot;: &quot;+0123456789101&quot;
+}</code></pre></div><section><h4 id="-82613531#failed-login" data-toc="failed-login#API-doc.md-failed-login">Failed Login:</h4><div class="detached code-block" id="-82613531#sk94ao_117"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Invalid username or password.&quot;
+}</code></pre></div></section></section></section><section><h2 id="-82613531#registration" data-toc="registration#API-doc.md-registration">Registration</h2><section><h3 id="-82613531#endpoint-api-registration" data-toc="endpoint-api-registration#API-doc.md-endpoint-api-registration">Endpoint: /api/registration</h3><ul class="list" id="-82613531#sk94ao_122" start="1"><li class="list-item" id="-82613531#sk94ao_125"><p><span class="control" id="-82613531#sk94ao_127">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_126"><p><span class="control" id="-82613531#sk94ao_128">Description</span>: Registers a new user with username, password and phone number.</p></li></ul></section><section><h3 id="-82613531#param1" data-toc="param1#API-doc.md-param1">Parameters</h3><div class="table-wrapper detached"><table id="-82613531#sk94ao_130"><tr class="header-row" id="-82613531#sk94ao_132"><th id="-82613531#sk94ao_136"><p>Field</p></th><th id="-82613531#sk94ao_137"><p>Type</p></th><th id="-82613531#sk94ao_138"><p>Required</p></th><th id="-82613531#sk94ao_139"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_133"><td id="-82613531#sk94ao_140"><p><span class="inline-code" id="-82613531#sk94ao_144">username</span></p></td><td id="-82613531#sk94ao_141"><p>String</p></td><td id="-82613531#sk94ao_142"><p>Yes</p></td><td id="-82613531#sk94ao_143"><p>The username of the user.</p></td></tr><tr class="" id="-82613531#sk94ao_134"><td id="-82613531#sk94ao_145"><p><span class="inline-code" id="-82613531#sk94ao_149">passwordHash</span></p></td><td id="-82613531#sk94ao_146"><p>String</p></td><td id="-82613531#sk94ao_147"><p>Yes</p></td><td id="-82613531#sk94ao_148"><p>The password hash for the account.</p></td></tr><tr class="" id="-82613531#sk94ao_135"><td id="-82613531#sk94ao_150"><p><span class="inline-code" id="-82613531#sk94ao_154">phone</span></p></td><td id="-82613531#sk94ao_151"><p>String</p></td><td id="-82613531#sk94ao_152"><p>Yes</p></td><td id="-82613531#sk94ao_153"><p>The phone number for the account.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example2" data-toc="example2#API-doc.md-example2">Example Requests and Responses</h2><section><h3 id="-82613531#request2" data-toc="request2#API-doc.md-request2">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_159"><pre><code class="language-http">POST /api/registration
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;exampleUser&quot;,
+    &quot;password&quot;: &quot;examplePasswordHash&quot;,
+    &quot;phone&quot;:&quot;examplePhoneNumber&quot;
+}</code></pre></div><section><h4 id="-82613531#response" data-toc="response#API-doc.md-response">Response</h4><div class="table-wrapper detached"><table id="-82613531#sk94ao_165"><tr class="header-row" id="-82613531#sk94ao_167"><th id="-82613531#sk94ao_170"><p>Field</p></th><th id="-82613531#sk94ao_171"><p>Type</p></th><th id="-82613531#sk94ao_172"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_168"><td id="-82613531#sk94ao_173"><p><span class="inline-code" id="-82613531#sk94ao_176">status</span></p></td><td id="-82613531#sk94ao_174"><p>String</p></td><td id="-82613531#sk94ao_175"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_169"><td id="-82613531#sk94ao_177"><p><span class="inline-code" id="-82613531#sk94ao_180">message</span></p></td><td id="-82613531#sk94ao_178"><p>String</p></td><td id="-82613531#sk94ao_179"><p>Error details, if the status is &quot;error&quot;.</p></td></tr></table></div></section><section><h4 id="-82613531#response-example" data-toc="response-example#API-doc.md-response-example">Response Example</h4></section><section><h4 id="-82613531#successful-login" data-toc="successful-login#API-doc.md-successful-login">Successful Login:</h4><div class="detached code-block" id="-82613531#sk94ao_184"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;
+}</code></pre></div><p id="-82613531#sk94ao_185"><span class="control" id="-82613531#sk94ao_188">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_186"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Invalid username or password.&quot;
+}</code></pre></div></section></section></section><section><h2 id="-82613531#forgot-password" data-toc="forgot-password#API-doc.md-forgot-password">Forgot-Password</h2><section><h3 id="-82613531#endpoint-api-forgotpassword" data-toc="endpoint-api-forgotpassword#API-doc.md-endpoint-api-forgotpassword">Endpoint: /api/forgotPassword</h3><ul class="list" id="-82613531#sk94ao_191" start="1"><li class="list-item" id="-82613531#sk94ao_196"><p><span class="control" id="-82613531#sk94ao_198">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_197"><p><span class="control" id="-82613531#sk94ao_199">Description</span>: Authenticates a user by sending a verification code to the associated phone number account.</p></li></ul><p id="-82613531#sk94ao_192"><span class="control" id="-82613531#sk94ao_200">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_193"><tr class="header-row" id="-82613531#sk94ao_201"><th id="-82613531#sk94ao_203"><p>Field</p></th><th id="-82613531#sk94ao_204"><p>Type</p></th><th id="-82613531#sk94ao_205"><p>Required</p></th><th id="-82613531#sk94ao_206"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_202"><td id="-82613531#sk94ao_207"><p><span class="inline-code" id="-82613531#sk94ao_211">username</span></p></td><td id="-82613531#sk94ao_208"><p>String</p></td><td id="-82613531#sk94ao_209"><p>Yes</p></td><td id="-82613531#sk94ao_210"><p>The username of the user.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example3" data-toc="example3#API-doc.md-example3">Example Requests and Responses</h2><section><h3 id="-82613531#request3" data-toc="request3#API-doc.md-request3">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_216"><pre><code class="language-http">POST /api/forgotPassword
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;exampleUser&quot;
+}</code></pre></div><p id="-82613531#sk94ao_217"><span class="control" id="-82613531#sk94ao_224">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_218"><tr class="header-row" id="-82613531#sk94ao_225"><th id="-82613531#sk94ao_228"><p>Field</p></th><th id="-82613531#sk94ao_229"><p>Type</p></th><th id="-82613531#sk94ao_230"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_226"><td id="-82613531#sk94ao_231"><p><span class="inline-code" id="-82613531#sk94ao_234">status</span></p></td><td id="-82613531#sk94ao_232"><p>String</p></td><td id="-82613531#sk94ao_233"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_227"><td id="-82613531#sk94ao_235"><p><span class="inline-code" id="-82613531#sk94ao_238">message</span></p></td><td id="-82613531#sk94ao_236"><p>String</p></td><td id="-82613531#sk94ao_237"><p>Error details, if the status is &quot;error&quot;.</p></td></tr></table></div><p id="-82613531#sk94ao_219"><span class="control" id="-82613531#sk94ao_239">Response Example</span> <span class="control" id="-82613531#sk94ao_240">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_220"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;
+}</code></pre></div><p id="-82613531#sk94ao_221"><span class="control" id="-82613531#sk94ao_241">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_222"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Invalid username.&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#verify-phone-number" data-toc="verify-phone-number#API-doc.md-verify-phone-number">Verify-Phone-Number</h2><section><h3 id="-82613531#endpoint-api-verifyphonenumber" data-toc="endpoint-api-verifyphonenumber#API-doc.md-endpoint-api-verifyphonenumber">Endpoint: /api/verifyPhoneNumber</h3><ul class="list" id="-82613531#sk94ao_244" start="1"><li class="list-item" id="-82613531#sk94ao_249"><p><span class="control" id="-82613531#sk94ao_251">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_250"><p><span class="control" id="-82613531#sk94ao_252">Description</span>: Sends a verification code to user's phone number.</p></li></ul><p id="-82613531#sk94ao_245"><span class="control" id="-82613531#sk94ao_253">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_246"><tr class="header-row" id="-82613531#sk94ao_254"><th id="-82613531#sk94ao_257"><p>Field</p></th><th id="-82613531#sk94ao_258"><p>Type</p></th><th id="-82613531#sk94ao_259"><p>Required</p></th><th id="-82613531#sk94ao_260"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_255"><td id="-82613531#sk94ao_261"><p><span class="inline-code" id="-82613531#sk94ao_265">username</span></p></td><td id="-82613531#sk94ao_262"><p>String</p></td><td id="-82613531#sk94ao_263"><p>Yes</p></td><td id="-82613531#sk94ao_264"><p>The username of the user.</p></td></tr><tr class="" id="-82613531#sk94ao_256"><td id="-82613531#sk94ao_266"><p><span class="inline-code" id="-82613531#sk94ao_270">hashedPassword</span></p></td><td id="-82613531#sk94ao_267"><p>String</p></td><td id="-82613531#sk94ao_268"><p>Yes</p></td><td id="-82613531#sk94ao_269"><p>The password hash for the account.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example4" data-toc="example4#API-doc.md-example4">Example Requests and Responses</h2><section><h3 id="-82613531#request4" data-toc="request4#API-doc.md-request4">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_275"><pre><code class="language-http">POST /api/verifyPhoneNumber
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;exampleUser&quot;,
+    &quot;hashedPassword&quot;: &quot;examplePasswordHash&quot;
+}</code></pre></div><p id="-82613531#sk94ao_276"><span class="control" id="-82613531#sk94ao_283">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_277"><tr class="header-row" id="-82613531#sk94ao_284"><th id="-82613531#sk94ao_288"><p>Field</p></th><th id="-82613531#sk94ao_289"><p>Type</p></th><th id="-82613531#sk94ao_290"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_285"><td id="-82613531#sk94ao_291"><p><span class="inline-code" id="-82613531#sk94ao_294">status</span></p></td><td id="-82613531#sk94ao_292"><p>String</p></td><td id="-82613531#sk94ao_293"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_286"><td id="-82613531#sk94ao_295"><p><span class="inline-code" id="-82613531#sk94ao_298">message</span></p></td><td id="-82613531#sk94ao_296"><p>String</p></td><td id="-82613531#sk94ao_297"><p>Error details, if the status is &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_287"><td id="-82613531#sk94ao_299"><p><span class="inline-code" id="-82613531#sk94ao_302">phoneNumber</span></p></td><td id="-82613531#sk94ao_300"><p>String</p></td><td id="-82613531#sk94ao_301"><p>Phone Number associated with user's account</p></td></tr></table></div><p id="-82613531#sk94ao_278"><span class="control" id="-82613531#sk94ao_303">Response Example</span> <span class="control" id="-82613531#sk94ao_304">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_279"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;phoneNumber&quot;: &quot;+123456789101&quot;
+}</code></pre></div><p id="-82613531#sk94ao_280"><span class="control" id="-82613531#sk94ao_305">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_281"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Invalid username or password.&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#verify-otp" data-toc="verify-otp#API-doc.md-verify-otp">Verify-OTP</h2><section><h3 id="-82613531#endpoint-api-verifyotp" data-toc="endpoint-api-verifyotp#API-doc.md-endpoint-api-verifyotp">Endpoint: /api/verifyOTP</h3><ul class="list" id="-82613531#sk94ao_308" start="1"><li class="list-item" id="-82613531#sk94ao_313"><p><span class="control" id="-82613531#sk94ao_315">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_314"><p><span class="control" id="-82613531#sk94ao_316">Description</span>: Validates the OTP code, returning &quot;success&quot; upon successful login.</p></li></ul><p id="-82613531#sk94ao_309"><span class="control" id="-82613531#sk94ao_317">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_310"><tr class="header-row" id="-82613531#sk94ao_318"><th id="-82613531#sk94ao_321"><p>Field</p></th><th id="-82613531#sk94ao_322"><p>Type</p></th><th id="-82613531#sk94ao_323"><p>Required</p></th><th id="-82613531#sk94ao_324"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_319"><td id="-82613531#sk94ao_325"><p><span class="inline-code" id="-82613531#sk94ao_329">username</span></p></td><td id="-82613531#sk94ao_326"><p>String</p></td><td id="-82613531#sk94ao_327"><p>Yes</p></td><td id="-82613531#sk94ao_328"><p>The username of the user.</p></td></tr><tr class="" id="-82613531#sk94ao_320"><td id="-82613531#sk94ao_330"><p><span class="inline-code" id="-82613531#sk94ao_334">otp</span></p></td><td id="-82613531#sk94ao_331"><p>String</p></td><td id="-82613531#sk94ao_332"><p>Yes</p></td><td id="-82613531#sk94ao_333"><p>The OTP code receives through SMS.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example5" data-toc="example5#API-doc.md-example5">Example Requests and Responses</h2><section><h3 id="-82613531#request5" data-toc="request5#API-doc.md-request5">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_339"><pre><code class="language-http">POST /api/verifyOTP
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;exampleUser&quot;,
+    &quot;otp&quot;: &quot;123456&quot;
+}</code></pre></div><p id="-82613531#sk94ao_340"><span class="control" id="-82613531#sk94ao_347">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_341"><tr class="header-row" id="-82613531#sk94ao_348"><th id="-82613531#sk94ao_352"><p>Field</p></th><th id="-82613531#sk94ao_353"><p>Type</p></th><th id="-82613531#sk94ao_354"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_349"><td id="-82613531#sk94ao_355"><p><span class="inline-code" id="-82613531#sk94ao_358">status</span></p></td><td id="-82613531#sk94ao_356"><p>String</p></td><td id="-82613531#sk94ao_357"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_350"><td id="-82613531#sk94ao_359"><p><span class="inline-code" id="-82613531#sk94ao_362">message</span></p></td><td id="-82613531#sk94ao_360"><p>String</p></td><td id="-82613531#sk94ao_361"><p>Error details, if the status is &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_351"><td id="-82613531#sk94ao_363"><p><span class="inline-code" id="-82613531#sk94ao_366">passwordHash</span></p></td><td id="-82613531#sk94ao_364"><p>String</p></td><td id="-82613531#sk94ao_365"><p>The password hash of the user.</p></td></tr></table></div><p id="-82613531#sk94ao_342"><span class="control" id="-82613531#sk94ao_367">Response Example</span> <span class="control" id="-82613531#sk94ao_368">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_343"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;passwordHash&quot;: &quot;992feb10b...&quot;
+}</code></pre></div><p id="-82613531#sk94ao_344"><span class="control" id="-82613531#sk94ao_369">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_345"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Failed to get password hash from database&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#new-chat-ids" data-toc="new-chat-ids#API-doc.md-new-chat-ids">New-Chat-Ids</h2><section><h3 id="-82613531#endpoint-api-newchatids" data-toc="endpoint-api-newchatids#API-doc.md-endpoint-api-newchatids">Endpoint: /api/newChatIds</h3><ul class="list" id="-82613531#sk94ao_372" start="1"><li class="list-item" id="-82613531#sk94ao_377"><p><span class="control" id="-82613531#sk94ao_379">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_378"><p><span class="control" id="-82613531#sk94ao_380">Description</span>: Returns a list of new chat ids.</p></li></ul><p id="-82613531#sk94ao_373"><span class="control" id="-82613531#sk94ao_381">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_374"><tr class="header-row" id="-82613531#sk94ao_382"><th id="-82613531#sk94ao_384"><p>Field</p></th><th id="-82613531#sk94ao_385"><p>Type</p></th><th id="-82613531#sk94ao_386"><p>Required</p></th><th id="-82613531#sk94ao_387"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_383"><td id="-82613531#sk94ao_388"><p><span class="inline-code" id="-82613531#sk94ao_392">token</span></p></td><td id="-82613531#sk94ao_389"><p>String</p></td><td id="-82613531#sk94ao_390"><p>Yes</p></td><td id="-82613531#sk94ao_391"><p>JWT token for session authentication.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example6" data-toc="example6#API-doc.md-example6">Example Requests and Responses</h2><section><h3 id="-82613531#request6" data-toc="request6#API-doc.md-request6">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_397"><pre><code class="language-http">POST /api/newChatIds
+Content-Type: application/json
+
+{
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;
+}</code></pre></div><p id="-82613531#sk94ao_398"><span class="control" id="-82613531#sk94ao_406">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_399"><tr class="header-row" id="-82613531#sk94ao_407"><th id="-82613531#sk94ao_411"><p>Field</p></th><th id="-82613531#sk94ao_412"><p>Type</p></th><th id="-82613531#sk94ao_413"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_408"><td id="-82613531#sk94ao_414"><p><span class="inline-code" id="-82613531#sk94ao_417">status</span></p></td><td id="-82613531#sk94ao_415"><p>String</p></td><td id="-82613531#sk94ao_416"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_409"><td id="-82613531#sk94ao_418"><p><span class="inline-code" id="-82613531#sk94ao_421">token</span></p></td><td id="-82613531#sk94ao_419"><p>String</p></td><td id="-82613531#sk94ao_420"><p>JWT token for session authentication.</p></td></tr><tr class="" id="-82613531#sk94ao_410"><td id="-82613531#sk94ao_422"><p><span class="inline-code" id="-82613531#sk94ao_425">message</span></p></td><td id="-82613531#sk94ao_423"><p>String</p></td><td id="-82613531#sk94ao_424"><p>Error details, if the status is &quot;error&quot;.</p></td></tr></table></div><p id="-82613531#sk94ao_400"><span class="control" id="-82613531#sk94ao_426">Response Example</span> <span class="control" id="-82613531#sk94ao_427">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_401"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;newChatIds&quot; : [&quot;&lt;chat-id1&gt;&quot;,&quot;&lt;chat-id2&gt;&quot;,...]
+}</code></pre></div><div class="detached code-block" id="-82613531#sk94ao_402"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;No new chat ids found&quot;
+}</code></pre></div><p id="-82613531#sk94ao_403"><span class="control" id="-82613531#sk94ao_428">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_404"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Failed to find new chat ids in database&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#get-public-key" data-toc="get-public-key#API-doc.md-get-public-key">Get-Public-Key</h2><section><h3 id="-82613531#endpoint-api-getpubkey" data-toc="endpoint-api-getpubkey#API-doc.md-endpoint-api-getpubkey">Endpoint: /api/getPubKey</h3><ul class="list" id="-82613531#sk94ao_431" start="1"><li class="list-item" id="-82613531#sk94ao_436"><p><span class="control" id="-82613531#sk94ao_438">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_437"><p><span class="control" id="-82613531#sk94ao_439">Description</span>: Requests the RSA public key of another user.</p></li></ul><p id="-82613531#sk94ao_432"><span class="control" id="-82613531#sk94ao_440">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_433"><tr class="header-row" id="-82613531#sk94ao_441"><th id="-82613531#sk94ao_444"><p>Field</p></th><th id="-82613531#sk94ao_445"><p>Type</p></th><th id="-82613531#sk94ao_446"><p>Required</p></th><th id="-82613531#sk94ao_447"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_442"><td id="-82613531#sk94ao_448"><p><span class="inline-code" id="-82613531#sk94ao_452">token</span></p></td><td id="-82613531#sk94ao_449"><p>String</p></td><td id="-82613531#sk94ao_450"><p>Yes</p></td><td id="-82613531#sk94ao_451"><p>JWT token for session authentication.</p></td></tr><tr class="" id="-82613531#sk94ao_443"><td id="-82613531#sk94ao_453"><p><span class="inline-code" id="-82613531#sk94ao_457">otherUser</span></p></td><td id="-82613531#sk94ao_454"><p>String</p></td><td id="-82613531#sk94ao_455"><p>Yes</p></td><td id="-82613531#sk94ao_456"><p>The username of the other user.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example7" data-toc="example7#API-doc.md-example7">Example Requests and Responses</h2><section><h3 id="-82613531#request7" data-toc="request7#API-doc.md-request7">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_462"><pre><code class="language-http">POST /api/getPubKey
+Content-Type: application/json
+
+{
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;
+    &quot;otherUser&quot;: &quot;exampleOtherUser&quot;
+}</code></pre></div><p id="-82613531#sk94ao_463"><span class="control" id="-82613531#sk94ao_470">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_464"><tr class="header-row" id="-82613531#sk94ao_471"><th id="-82613531#sk94ao_475"><p>Field</p></th><th id="-82613531#sk94ao_476"><p>Type</p></th><th id="-82613531#sk94ao_477"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_472"><td id="-82613531#sk94ao_478"><p><span class="inline-code" id="-82613531#sk94ao_481">status</span></p></td><td id="-82613531#sk94ao_479"><p>String</p></td><td id="-82613531#sk94ao_480"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_473"><td id="-82613531#sk94ao_482"><p><span class="inline-code" id="-82613531#sk94ao_485">message</span></p></td><td id="-82613531#sk94ao_483"><p>String</p></td><td id="-82613531#sk94ao_484"><p>Error details, if the status is &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_474"><td id="-82613531#sk94ao_486"><p><span class="inline-code" id="-82613531#sk94ao_489">pubKey</span></p></td><td id="-82613531#sk94ao_487"><p>String</p></td><td id="-82613531#sk94ao_488"><p>Base64 encoded public key for the other user.</p></td></tr></table></div><p id="-82613531#sk94ao_465"><span class="control" id="-82613531#sk94ao_490">Response Example</span> <span class="control" id="-82613531#sk94ao_491">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_466"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;pubKey&quot;: &quot;MIIBIjANBgkqhkiG9w0BAQEFAAO...&quot;
+}</code></pre></div><p id="-82613531#sk94ao_467"><span class="control" id="-82613531#sk94ao_492">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_468"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Failed to get pubKey from database&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#send-public-key" data-toc="send-public-key#API-doc.md-send-public-key">Send-Public-Key</h2><section><h3 id="-82613531#endpoint-api-sendpubkey" data-toc="endpoint-api-sendpubkey#API-doc.md-endpoint-api-sendpubkey">Endpoint: /api/sendPubKey</h3><ul class="list" id="-82613531#sk94ao_495" start="1"><li class="list-item" id="-82613531#sk94ao_500"><p><span class="control" id="-82613531#sk94ao_502">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_501"><p><span class="control" id="-82613531#sk94ao_503">Description</span>: Sends the base64 encoded public key of current user to server.</p></li></ul><p id="-82613531#sk94ao_496"><span class="control" id="-82613531#sk94ao_504">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_497"><tr class="header-row" id="-82613531#sk94ao_505"><th id="-82613531#sk94ao_508"><p>Field</p></th><th id="-82613531#sk94ao_509"><p>Type</p></th><th id="-82613531#sk94ao_510"><p>Required</p></th><th id="-82613531#sk94ao_511"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_506"><td id="-82613531#sk94ao_512"><p><span class="inline-code" id="-82613531#sk94ao_516">token</span></p></td><td id="-82613531#sk94ao_513"><p>String</p></td><td id="-82613531#sk94ao_514"><p>Yes</p></td><td id="-82613531#sk94ao_515"><p>JWT token for session authentication.</p></td></tr><tr class="" id="-82613531#sk94ao_507"><td id="-82613531#sk94ao_517"><p><span class="inline-code" id="-82613531#sk94ao_521">pubKey</span></p></td><td id="-82613531#sk94ao_518"><p>String</p></td><td id="-82613531#sk94ao_519"><p>Yes</p></td><td id="-82613531#sk94ao_520"><p>The public key for the current user.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example8" data-toc="example8#API-doc.md-example8">Example Requests and Responses</h2><section><h3 id="-82613531#request8" data-toc="request8#API-doc.md-request8">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_526"><pre><code class="language-http">POST /api/sendPubKey
+Content-Type: application/json
+
+{
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;,
+    &quot;pubKey&quot;: &quot;MIIBIjANBgkqhkiG9w0BAQEFAAO...&quot;
+}</code></pre></div><p id="-82613531#sk94ao_527"><span class="control" id="-82613531#sk94ao_534">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_528"><tr class="header-row" id="-82613531#sk94ao_535"><th id="-82613531#sk94ao_538"><p>Field</p></th><th id="-82613531#sk94ao_539"><p>Type</p></th><th id="-82613531#sk94ao_540"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_536"><td id="-82613531#sk94ao_541"><p><span class="inline-code" id="-82613531#sk94ao_544">status</span></p></td><td id="-82613531#sk94ao_542"><p>String</p></td><td id="-82613531#sk94ao_543"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_537"><td id="-82613531#sk94ao_545"><p><span class="inline-code" id="-82613531#sk94ao_548">message</span></p></td><td id="-82613531#sk94ao_546"><p>String</p></td><td id="-82613531#sk94ao_547"><p>Error details, if the status is &quot;error&quot;.</p></td></tr></table></div><p id="-82613531#sk94ao_529"><span class="control" id="-82613531#sk94ao_549">Response Example</span> <span class="control" id="-82613531#sk94ao_550">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_530"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;
+}</code></pre></div><p id="-82613531#sk94ao_531"><span class="control" id="-82613531#sk94ao_551">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_532"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Failed to update pubKey field&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#get-session" data-toc="get-session#API-doc.md-get-session">Get-Session</h2><section><h3 id="-82613531#endpoint-api-getsession" data-toc="endpoint-api-getsession#API-doc.md-endpoint-api-getsession">Endpoint: /api/getSession</h3><ul class="list" id="-82613531#sk94ao_554" start="1"><li class="list-item" id="-82613531#sk94ao_559"><p><span class="control" id="-82613531#sk94ao_561">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_560"><p><span class="control" id="-82613531#sk94ao_562">Description</span>: Retrieves a session token with the provided credentials.</p></li></ul><p id="-82613531#sk94ao_555"><span class="control" id="-82613531#sk94ao_563">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_556"><tr class="header-row" id="-82613531#sk94ao_564"><th id="-82613531#sk94ao_567"><p>Field</p></th><th id="-82613531#sk94ao_568"><p>Type</p></th><th id="-82613531#sk94ao_569"><p>Required</p></th><th id="-82613531#sk94ao_570"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_565"><td id="-82613531#sk94ao_571"><p><span class="inline-code" id="-82613531#sk94ao_575">username</span></p></td><td id="-82613531#sk94ao_572"><p>String</p></td><td id="-82613531#sk94ao_573"><p>Yes</p></td><td id="-82613531#sk94ao_574"><p>The username of the user.</p></td></tr><tr class="" id="-82613531#sk94ao_566"><td id="-82613531#sk94ao_576"><p><span class="inline-code" id="-82613531#sk94ao_580">passwordHash</span></p></td><td id="-82613531#sk94ao_577"><p>String</p></td><td id="-82613531#sk94ao_578"><p>Yes</p></td><td id="-82613531#sk94ao_579"><p>The password hash for the account.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example9" data-toc="example9#API-doc.md-example9">Example Requests and Responses</h2><section><h3 id="-82613531#request9" data-toc="request9#API-doc.md-request9">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_585"><pre><code class="language-http">POST /api/getSession
+Content-Type: application/json
+
+{
+    &quot;username&quot;: &quot;exampleUser&quot;,
+    &quot;passwordHash&quot;: &quot;examplePasswordHash&quot;
+}</code></pre></div><p id="-82613531#sk94ao_586"><span class="control" id="-82613531#sk94ao_593">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_587"><tr class="header-row" id="-82613531#sk94ao_594"><th id="-82613531#sk94ao_598"><p>Field</p></th><th id="-82613531#sk94ao_599"><p>Type</p></th><th id="-82613531#sk94ao_600"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_595"><td id="-82613531#sk94ao_601"><p><span class="inline-code" id="-82613531#sk94ao_604">status</span></p></td><td id="-82613531#sk94ao_602"><p>String</p></td><td id="-82613531#sk94ao_603"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_596"><td id="-82613531#sk94ao_605"><p><span class="inline-code" id="-82613531#sk94ao_608">message</span></p></td><td id="-82613531#sk94ao_606"><p>String</p></td><td id="-82613531#sk94ao_607"><p>Error details, if the status is &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_597"><td id="-82613531#sk94ao_609"><p><span class="inline-code" id="-82613531#sk94ao_612">token</span></p></td><td id="-82613531#sk94ao_610"><p>String</p></td><td id="-82613531#sk94ao_611"><p>JWT token for session authentication.</p></td></tr></table></div><p id="-82613531#sk94ao_588"><span class="control" id="-82613531#sk94ao_613">Response Example</span> <span class="control" id="-82613531#sk94ao_614">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_589"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;
+}</code></pre></div><p id="-82613531#sk94ao_590"><span class="control" id="-82613531#sk94ao_615">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_591"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Wrong username or password&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#get-chat-id" data-toc="get-chat-id#API-doc.md-get-chat-id">Get-Chat-Id</h2><section><h3 id="-82613531#endpoint-api-getchatid" data-toc="endpoint-api-getchatid#API-doc.md-endpoint-api-getchatid">Endpoint: /api/getChatId</h3><ul class="list" id="-82613531#sk94ao_618" start="1"><li class="list-item" id="-82613531#sk94ao_623"><p><span class="control" id="-82613531#sk94ao_625">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_624"><p><span class="control" id="-82613531#sk94ao_626">Description</span>: Retrieves an existing chat id for a specified user.</p></li></ul><p id="-82613531#sk94ao_619"><span class="control" id="-82613531#sk94ao_627">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_620"><tr class="header-row" id="-82613531#sk94ao_628"><th id="-82613531#sk94ao_631"><p>Field</p></th><th id="-82613531#sk94ao_632"><p>Type</p></th><th id="-82613531#sk94ao_633"><p>Required</p></th><th id="-82613531#sk94ao_634"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_629"><td id="-82613531#sk94ao_635"><p><span class="inline-code" id="-82613531#sk94ao_639">token</span></p></td><td id="-82613531#sk94ao_636"><p>String</p></td><td id="-82613531#sk94ao_637"><p>Yes</p></td><td id="-82613531#sk94ao_638"><p>JWT token for session authentication.</p></td></tr><tr class="" id="-82613531#sk94ao_630"><td id="-82613531#sk94ao_640"><p><span class="inline-code" id="-82613531#sk94ao_644">otherUser</span></p></td><td id="-82613531#sk94ao_641"><p>String</p></td><td id="-82613531#sk94ao_642"><p>Yes</p></td><td id="-82613531#sk94ao_643"><p>The username of the other user.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example10" data-toc="example10#API-doc.md-example10">Example Requests and Responses</h2><section><h3 id="-82613531#request10" data-toc="request10#API-doc.md-request10">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_649"><pre><code class="language-http">POST /api/getChatId
+Content-Type: application/json
+
+{
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;,
+    &quot;otherUser&quot;: &quot;exampleOtherUser&quot;
+}</code></pre></div><p id="-82613531#sk94ao_650"><span class="control" id="-82613531#sk94ao_657">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_651"><tr class="header-row" id="-82613531#sk94ao_658"><th id="-82613531#sk94ao_662"><p>Field</p></th><th id="-82613531#sk94ao_663"><p>Type</p></th><th id="-82613531#sk94ao_664"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_659"><td id="-82613531#sk94ao_665"><p><span class="inline-code" id="-82613531#sk94ao_668">status</span></p></td><td id="-82613531#sk94ao_666"><p>String</p></td><td id="-82613531#sk94ao_667"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_660"><td id="-82613531#sk94ao_669"><p><span class="inline-code" id="-82613531#sk94ao_672">token</span></p></td><td id="-82613531#sk94ao_670"><p>String</p></td><td id="-82613531#sk94ao_671"><p>JWT token for session authentication.</p></td></tr><tr class="" id="-82613531#sk94ao_661"><td id="-82613531#sk94ao_673"><p><span class="inline-code" id="-82613531#sk94ao_676">message</span></p></td><td id="-82613531#sk94ao_674"><p>String</p></td><td id="-82613531#sk94ao_675"><p>Error details, if the status is &quot;error&quot;.</p></td></tr></table></div><p id="-82613531#sk94ao_652"><span class="control" id="-82613531#sk94ao_677">Response Example</span> <span class="control" id="-82613531#sk94ao_678">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_653"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;chatId&quot;: &quot;84c10f60-f1cf-4045-b018-113e9dd40a49&quot;
+}</code></pre></div><p id="-82613531#sk94ao_654"><span class="control" id="-82613531#sk94ao_679">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_655"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Failed to get chat id from database&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#change-phone" data-toc="change-phone#API-doc.md-change-phone">Change-Phone</h2><section><h3 id="-82613531#endpoint-api-changephone" data-toc="endpoint-api-changephone#API-doc.md-endpoint-api-changephone">Endpoint: /api/changePhone</h3><ul class="list" id="-82613531#sk94ao_682" start="1"><li class="list-item" id="-82613531#sk94ao_687"><p><span class="control" id="-82613531#sk94ao_689">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_688"><p><span class="control" id="-82613531#sk94ao_690">Description</span>: Requests a new phone number.</p></li></ul><p id="-82613531#sk94ao_683"><span class="control" id="-82613531#sk94ao_691">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_684"><tr class="header-row" id="-82613531#sk94ao_692"><th id="-82613531#sk94ao_695"><p>Field</p></th><th id="-82613531#sk94ao_696"><p>Type</p></th><th id="-82613531#sk94ao_697"><p>Required</p></th><th id="-82613531#sk94ao_698"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_693"><td id="-82613531#sk94ao_699"><p><span class="inline-code" id="-82613531#sk94ao_703">token</span></p></td><td id="-82613531#sk94ao_700"><p>String</p></td><td id="-82613531#sk94ao_701"><p>Yes</p></td><td id="-82613531#sk94ao_702"><p>JWT token for session authentication.</p></td></tr><tr class="" id="-82613531#sk94ao_694"><td id="-82613531#sk94ao_704"><p><span class="inline-code" id="-82613531#sk94ao_708">phone</span></p></td><td id="-82613531#sk94ao_705"><p>String</p></td><td id="-82613531#sk94ao_706"><p>Yes</p></td><td id="-82613531#sk94ao_707"><p>The new phone number for the account.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example11" data-toc="example11#API-doc.md-example11">Example Requests and Responses</h2><section><h3 id="-82613531#request11" data-toc="request11#API-doc.md-request11">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_713"><pre><code class="language-http">POST /api/changePhone
+Content-Type: application/json
+
+{
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;,
+    &quot;phone&quot;: &quot;+0123456789101&quot;
+}</code></pre></div><p id="-82613531#sk94ao_714"><span class="control" id="-82613531#sk94ao_721">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_715"><tr class="header-row" id="-82613531#sk94ao_722"><th id="-82613531#sk94ao_725"><p>Field</p></th><th id="-82613531#sk94ao_726"><p>Type</p></th><th id="-82613531#sk94ao_727"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_723"><td id="-82613531#sk94ao_728"><p><span class="inline-code" id="-82613531#sk94ao_731">status</span></p></td><td id="-82613531#sk94ao_729"><p>String</p></td><td id="-82613531#sk94ao_730"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_724"><td id="-82613531#sk94ao_732"><p><span class="inline-code" id="-82613531#sk94ao_735">message</span></p></td><td id="-82613531#sk94ao_733"><p>String</p></td><td id="-82613531#sk94ao_734"><p>Error details, if the status is &quot;error&quot;.</p></td></tr></table></div><p id="-82613531#sk94ao_716"><span class="control" id="-82613531#sk94ao_736">Response Example</span> <span class="control" id="-82613531#sk94ao_737">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_717"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;
+}</code></pre></div><p id="-82613531#sk94ao_718"><span class="control" id="-82613531#sk94ao_738">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_719"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Failed to change phone number; user may not exist&quot;
+}</code></pre></div></section></section><section><h2 id="-82613531#change-password" data-toc="change-password#API-doc.md-change-password">Change-Password</h2><section><h3 id="-82613531#endpoint-api-changepassword" data-toc="endpoint-api-changepassword#API-doc.md-endpoint-api-changepassword">Endpoint: /api/changePassword</h3><ul class="list" id="-82613531#sk94ao_741" start="1"><li class="list-item" id="-82613531#sk94ao_746"><p><span class="control" id="-82613531#sk94ao_748">Method</span>: POST</p></li><li class="list-item" id="-82613531#sk94ao_747"><p><span class="control" id="-82613531#sk94ao_749">Description</span>: Requests a new password.</p></li></ul><p id="-82613531#sk94ao_742"><span class="control" id="-82613531#sk94ao_750">Parameters</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_743"><tr class="header-row" id="-82613531#sk94ao_751"><th id="-82613531#sk94ao_754"><p>Field</p></th><th id="-82613531#sk94ao_755"><p>Type</p></th><th id="-82613531#sk94ao_756"><p>Required</p></th><th id="-82613531#sk94ao_757"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_752"><td id="-82613531#sk94ao_758"><p><span class="inline-code" id="-82613531#sk94ao_762">token</span></p></td><td id="-82613531#sk94ao_759"><p>String</p></td><td id="-82613531#sk94ao_760"><p>Yes</p></td><td id="-82613531#sk94ao_761"><p>JWT token for session authentication.</p></td></tr><tr class="" id="-82613531#sk94ao_753"><td id="-82613531#sk94ao_763"><p><span class="inline-code" id="-82613531#sk94ao_767">newPassword</span></p></td><td id="-82613531#sk94ao_764"><p>String</p></td><td id="-82613531#sk94ao_765"><p>Yes</p></td><td id="-82613531#sk94ao_766"><p>The new password for the account.</p></td></tr></table></div></section></section><section><h2 id="-82613531#example12" data-toc="example12#API-doc.md-example12">Example Requests and Responses</h2><section><h3 id="-82613531#request12" data-toc="request12#API-doc.md-request12">Request Example</h3><div class="detached code-block" id="-82613531#sk94ao_772"><pre><code class="language-http">POST /api/changePassword
+Content-Type: application/json
+
+{
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;,
+    &quot;newPassword&quot;: &quot;examplePassword&quot;
+}</code></pre></div><p id="-82613531#sk94ao_773"><span class="control" id="-82613531#sk94ao_780">Response</span></p><div class="table-wrapper detached"><table id="-82613531#sk94ao_774"><tr class="header-row" id="-82613531#sk94ao_781"><th id="-82613531#sk94ao_784"><p>Field</p></th><th id="-82613531#sk94ao_785"><p>Type</p></th><th id="-82613531#sk94ao_786"><p>Description</p></th></tr><tr class="" id="-82613531#sk94ao_782"><td id="-82613531#sk94ao_787"><p><span class="inline-code" id="-82613531#sk94ao_790">status</span></p></td><td id="-82613531#sk94ao_788"><p>String</p></td><td id="-82613531#sk94ao_789"><p>&quot;success&quot; or &quot;error&quot;.</p></td></tr><tr class="" id="-82613531#sk94ao_783"><td id="-82613531#sk94ao_791"><p><span class="inline-code" id="-82613531#sk94ao_794">message</span></p></td><td id="-82613531#sk94ao_792"><p>String</p></td><td id="-82613531#sk94ao_793"><p>Error details, if the status is &quot;error&quot;.</p></td></tr></table></div><p id="-82613531#sk94ao_775"><span class="control" id="-82613531#sk94ao_795">Response Example</span> <span class="control" id="-82613531#sk94ao_796">Successful Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_776"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;
+}</code></pre></div><p id="-82613531#sk94ao_777"><span class="control" id="-82613531#sk94ao_797">Failed Login:</span></p><div class="detached code-block" id="-82613531#sk94ao_778"><pre><code class="language-json">{
+    &quot;status&quot;: &quot;error&quot;,
+    &quot;message&quot;: &quot;Failed to change password; user may not exist&quot;
+}</code></pre></div></section></section></article></div></section></div></body></html>
