@@ -78,8 +78,11 @@ jobs:
         with:
           name: docs
 
+      - name: Verify artifact location
+        run: ls -R
+
       - name: Unzip artifact
-        run: unzip -O UTF-8 -qq 'artifacts/${{ env.ARTIFACT }}' -d dir
+        run: unzip -O UTF-8 -qq 'webHelpIN2-all.zip' -d dir
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -94,27 +97,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-  publish-indexes:
-    needs: [build, test, deploy]
-    runs-on: ubuntu-latest
-    container:
-      image: registry.jetbrains.team/p/writerside/builder/algolia-publisher:2.0.32-3
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: docs
-      - name: Unzip artifact
-        run: |
-          unzip -O UTF-8 -qq 'artifacts/${{ env.ALGOLIA_ARTIFACT }}' -d algolia-indexes
-      - name: Update Algolia Indexes
-        run: |
-          env ALGOLIA_KEY=${{ secrets.ALGOLIA_KEY }} java -jar /opt/builder/help-publication-agent.jar \
-          update-index \
-          --application-name "${{ env.ALGOLIA_APP_NAME }}" \
-          --index-name "${{ env.ALGOLIA_INDEX_NAME }}" \
-          --product "${{ env.CONFIG_JSON_PRODUCT }}" \
-          --version "${{ env.CONFIG_JSON_VERSION }}" \
-          --index-directory algolia-indexes/ \
-          2>&1 | tee algolia-update-index-log.txt
-
