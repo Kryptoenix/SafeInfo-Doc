@@ -14,6 +14,8 @@ SafeInfo is a messaging app project developed to explore and address the challen
  * Encrypted chat history storage
  * Two-factor authentication (2FA) via SMS verification
 
+![](arch.png)
+
 ## Overview of Client-Side Architecture
 
 Only one panel can be open at a time. When switching panels, the previous panel is removed from memory, and the new panel is initialized (lazy loading). Here’s a quick overview of how panels are managed within the client-side application:

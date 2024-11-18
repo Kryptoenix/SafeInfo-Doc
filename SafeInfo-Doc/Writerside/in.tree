@@ -8,4 +8,5 @@
 
     <toc-element topic="Docs.md"/>
     <toc-element topic="API-doc.md"/>
+    <toc-element topic="Installation.md"/>
 </instance-profile>
